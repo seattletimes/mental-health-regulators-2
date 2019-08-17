@@ -1,5 +1,3 @@
-require("component-responsive-frame/child");
-
 var xhr = require("./lib/xhr");
 var $ = require("./lib/qsa");
 
