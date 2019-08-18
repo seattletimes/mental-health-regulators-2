@@ -3,132 +3,178 @@ require("waypoints/lib/noframework.waypoints");
 
 var xhr = require("./lib/xhr");
 var $ = require("./lib/qsa");
+var debounce = require("./lib/debounce");
 
 
-    var waypoint = new Waypoint({
-  element: document.getElementById('player0'),
-  handler: function(direction) {
-    var audio = document.getElementById('aud0')
-    audio.play()
-  },
-  offset: '20%'
-})
 
-    var waypoint = new Waypoint({
+window.onload = function(){
+  document.getElementById('aud0').play();
+  
+}
+
+var debounce = require("./lib/debounce");
+var Camera = require("savage-camera");
+var savage = require("savage-query");
+var keyStage = document.querySelector(".scroll-content");
+var map = document.querySelector(".backdrop svg");
+var camera = new Camera(map);
+var stages = $(".layer").reverse();
+var current = null;
+var existing = document.querySelector("#Existing");
+
+var onScroll = function() {
+  var scrollBounds = keyStage.getBoundingClientRect();
+  for (var i = 0; i < stages.length; i++) {
+    var stage = stages[i];
+    var bounds = stage.getBoundingClientRect();
+    if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+      var layerID = stage.getAttribute("data-layer");
+      if (layerID == current) return;
+      var layer = document.querySelector("#" + layerID);
+      if (!layer) return;      
+      if (layerID != 'Existing') {
+        savage(map).addClass("zoomed");
+      } else {
+        savage(map).removeClass("zoomed");
+      }
+      var active = document.querySelector(".activated");
+      if (active) savage(active).removeClass("activated");
+      savage(layer).addClass("activated");      
+      current = layerID;
+      camera.zoomTo(layer, window.innerWidth > 1000 ? 200 : 50, 500);
+      return;
+      
+    }
+  }
+}
+
+
+    var waypointPlay0 = new Waypoint({
   element: document.getElementById('player0'),
   handler: function(down) {
-    var audio = document.getElementById('aud0')
-    audio.pause()
+    var audioPlay0 = document.getElementById('aud0')
+    audioPlay0.play()
   },
-  offset: '0%'
+  offset: '10%'
 })
 
-        var waypoint = new Waypoint({
+
+
+    var waypointPause0 = new Waypoint({
+  element: document.getElementById('player0'),
+  handler: function(down) {
+    var audioPause0 = document.getElementById('aud0')
+    audioPause0.pause()
+  },
+  offset: '-10%'
+})
+
+        var waypointPlay1 = new Waypoint({
   element: document.getElementById('player1'),
   handler: function(down) {
-    var audio = document.getElementById('aud1')
-    audio.play()
+    var audioPlay1 = document.getElementById('aud1')
+    audioPlay1.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause1 = new Waypoint({
   element: document.getElementById('player1'),
   handler: function(down) {
-    var audio = document.getElementById('aud1')
-    audio.pause()
+    var audioPause1 = document.getElementById('aud1')
+    audioPause1.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
-          var waypoint = new Waypoint({
+          var waypointPlay2 = new Waypoint({
   element: document.getElementById('player2'),
   handler: function(down) {
-    var audio = document.getElementById('aud2')
-    audio.play()
+    var audioPlay2 = document.getElementById('aud2')
+    audioPlay2.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause2 = new Waypoint({
   element: document.getElementById('player2'),
   handler: function(down) {
-    var audio = document.getElementById('aud2')
-    audio.pause()
+    var audioPause2 = document.getElementById('aud2')
+    audioPause2.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
-              var waypoint = new Waypoint({
+    var waypointPlay3 = new Waypoint({
   element: document.getElementById('player3'),
   handler: function(down) {
-    var audio = document.getElementById('aud3')
-    audio.play()
+    var audioPlay3 = document.getElementById('aud3')
+    audioPlay3.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause3 = new Waypoint({
   element: document.getElementById('player3'),
   handler: function(down) {
-    var audio = document.getElementById('aud3')
-    audio.pause()
+    var audioPause3 = document.getElementById('aud3')
+    audioPause3.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
-              var waypoint = new Waypoint({
+              var waypointPlay4 = new Waypoint({
   element: document.getElementById('player4'),
   handler: function(down) {
-    var audio = document.getElementById('aud4')
-    audio.play()
+    var audioPlay4 = document.getElementById('aud4')
+    audioPlay4.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause4 = new Waypoint({
   element: document.getElementById('player4'),
   handler: function(down) {
-    var audio = document.getElementById('aud4')
-    audio.pause()
+    var audioPause4 = document.getElementById('aud4')
+    audioPause4.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
-              var waypoint = new Waypoint({
+              var waypointPlay5 = new Waypoint({
   element: document.getElementById('player5'),
   handler: function(down) {
-    var audio = document.getElementById('aud5')
-    audio.play()
+    var audioPlay5 = document.getElementById('aud5')
+    audioPlay5.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause5 = new Waypoint({
   element: document.getElementById('player5'),
   handler: function(down) {
-    var audio = document.getElementById('aud5')
-    audio.pause()
+    var audioPause5 = document.getElementById('aud5')
+    audioPause5.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
-              var waypoint = new Waypoint({
+              var waypointPlay6 = new Waypoint({
   element: document.getElementById('player6'),
   handler: function(down) {
-    var audio = document.getElementById('aud6')
-    audio.play()
+    var audioPlay6 = document.getElementById('aud6')
+    audioPlay6.play()
   },
   offset: '50%'
 })
 
-    var waypoint = new Waypoint({
+    var waypointPause6 = new Waypoint({
   element: document.getElementById('player6'),
   handler: function(down) {
-    var audio = document.getElementById('aud6')
-    audio.pause()
+    var audioPause6 = document.getElementById('aud6')
+    audioPause6.pause()
   },
-  offset: '0%'
+  offset: '-10%'
 })
 
 var button0 = document.querySelector("#btn0");
@@ -137,12 +183,7 @@ var button0 = document.querySelector("#btn0");
         var audio0 = document.querySelector("#aud0");
         audio0.play();
     };
-    var button1 = document.querySelector("#btn1");
-    button1.addEventListener("click", player1);
-    function player1() {
-        var audio1 = document.querySelector("#aud1");
-        audio1.play();
-    };
+    
 
 window.addEventListener("scroll", debounce(onScroll, 500));
 onScroll();
