@@ -6,14 +6,13 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2019/smokey-point-hospital-911-call"
     }
   },
-  "title": "",
-  "description": "",
-  "url": "",
+  "title": "Smokey Point Hospital 911 call",
+  "description": "A 911 call was made from Smokey Point Hospital on June 19, 2018",
+  "url": "https://projects.seattletimes.com/2019/smokey-point-hospital-911-call/",
   "image": "assets/social.jpg",
-  "sheets": [""],
   "embedded": false,
-  "production": false
+  "production": true
 }

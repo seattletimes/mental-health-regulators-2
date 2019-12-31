@@ -9,7 +9,10 @@ var parseTime = function(time) {
   var remainder = time.replace(/\..+$/, "").split(":").reverse();
   remainder.forEach((t, i) => total += t * (i ? 60 * i : 1));
   return total + ms;
+
 };
+
+
 
 var parseVTT = function(text) {
   var lines = text.split("\n").map(l => l.trim());
@@ -110,6 +113,7 @@ players.forEach(function(container) {
     display.appendChild(newLine);
     display.setAttribute("data-speaker", item.speaker);
     currentItem = item.index;
+    console.log(speaker);
   };
 
   var onUpdate = function(e) {

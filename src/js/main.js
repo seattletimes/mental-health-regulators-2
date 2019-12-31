@@ -94,7 +94,7 @@ function scrollthere6(){
 
 
 
-var button0 = document.querySelector("#btn0");
+var button0 = document.getElementById("btn0");
     button0.addEventListener("click", player0);
     function player0() {
         var audio0 = document.querySelector("#aud1");
@@ -137,7 +137,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay0 = document.getElementById('aud0')
     audioPlay0.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause0 = new Waypoint({
@@ -155,7 +155,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay1 = document.getElementById('aud1')
     audioPlay1.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause1 = new Waypoint({
@@ -173,7 +173,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay2 = document.getElementById('aud2')
     audioPlay2.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause2 = new Waypoint({
@@ -191,7 +191,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay3 = document.getElementById('aud3')
     audioPlay3.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause3 = new Waypoint({
@@ -209,7 +209,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay4 = document.getElementById('aud4')
     audioPlay4.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause4 = new Waypoint({
@@ -227,7 +227,7 @@ var button0 = document.querySelector("#btn0");
     var audioPlay5 = document.getElementById('aud5')
     audioPlay5.play()
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause5 = new Waypoint({
@@ -242,10 +242,10 @@ var button0 = document.querySelector("#btn0");
               var waypointPlay6 = new Waypoint({
   element: document.getElementById('player6'),
   handler: function(down) {
-    var audioPlay6 = document.getElementById('aud6')
-    audioPlay6.play()
+    var audioPlay6 = document.getElementById('aud6');
+    audioPlay6.play();
   },
-  offset: '20%'
+  offset: '50%'
 })
 
     var waypointPause6 = new Waypoint({
